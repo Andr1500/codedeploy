@@ -1,6 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /var/www/html/
-
+  - source: /
+    destination: /home/ubuntu/
+hooks:
+  ApplicationStart:
+    - location: start_docker.sh
+      timeout: 300
+      runas: root
